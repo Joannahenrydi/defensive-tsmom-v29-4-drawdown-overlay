@@ -1,4 +1,4 @@
-# ETF Drawdown Research — v29.4 to v31
+# ETF Drawdown Research — v29.4 to v32
 
 ## Result reports
 
@@ -8,8 +8,10 @@
 - [v30 result report](V30_RESULT_REPORT.md)
 - [v31 result report](V31_RESULT_REPORT.md)
 - [v29.4 D1 versus v31 result figures](V31_RESULT_FIGURES.md)
+- [v32 result report](V32_RESULT_REPORT.md)
+- [v32 required result figures](V32_RESULT_FIGURES.md)
 
-This private repository contains only the five frozen research stages requested for the long-only
+This private repository contains only the six frozen research stages requested for the long-only
 ETF strategy:
 
 - **v29.4** applies causal drawdown-driven exposure scaling to the frozen P3 long-and-cash return
@@ -23,11 +25,14 @@ ETF strategy:
   original D1 re-entry eligibility. No candidate passes every frozen gate, so D1 remains selected.
 - **v31** replaces the portfolio stop with independent trade-episode loss stops. The -15% stop
   improves return and tail metrics but misses the frozen fixed-episode gate, so D1 remains selected.
+- **v32** replaces v31's fixed threshold with one entry-volatility-calibrated threshold clipped to
+  12.5%-15.0%. It improves aggregate return and tail metrics but still improves only two of five
+  fixed drawdown windows, so the frozen decision again keeps D1.
 
 The repository does not contain earlier strategy implementations. `inputs/frozen_p3/` holds only
 the immutable P3 decision, daily return stream and trade-ledger evidence needed to reproduce
-v29.4–v31. `inputs/frozen_market/` supplies the locked 45-ETF adjusted-close history needed for
-v29.6's causal correlation clusters and v31's trade-entry loss measurement.
+v29.4–v32. `inputs/frozen_market/` supplies the locked 45-ETF adjusted-close history needed for
+v29.6's causal correlation clusters and v31/v32's trade-entry loss measurement.
 
 ## Results
 
@@ -38,6 +43,7 @@ v29.6's causal correlation clusters and v31's trade-entry loss measurement.
 | v29.6 | `V29_6_REJECTED_KEEP_D1` | Keep D1 |
 | v30 | `V30_REJECTED_KEEP_D1` | Keep D1 |
 | v31 | `V31_REJECTED_KEEP_D1` | Keep D1 |
+| v32 | `V32_REJECTED_KEEP_D1` | Keep D1 |
 
 Raw P3 had 9.40% CAGR and -26.55% maximum drawdown. D1 retained 8.93% CAGR and reduced maximum
 drawdown to -23.49%. v29.5 identified August 2011 as the -13.83% worst month: the controller
@@ -58,6 +64,11 @@ Calmar to 0.427 and improved worst month to -12.35%. It improved only two of fiv
 drawdown windows, below the required three. The -12.5% stop improved four windows and retained
 8.57% CAGR but materially lagged D1 in two non-2011 years, above the permitted one.
 
+In v32, the one-shot hybrid threshold produced 8.98% CAGR, 0.641 Sharpe, -21.10% maximum drawdown,
+0.425 Calmar and a -12.35% worst month. It passed seven of eight gates but improved only two of
+five fixed D1 drawdown windows. Following the pre-registered rule, v32 is rejected and the
+position-stop optimization sequence ends with D1 retained.
+
 ## Reproduce
 
 ```bash
@@ -67,6 +78,8 @@ PYTHONPATH=. python scripts/evaluate_etf_tail_attribution_v29_5.py
 PYTHONPATH=. python scripts/evaluate_etf_concentration_control_v29_6.py
 PYTHONPATH=. python scripts/evaluate_d1_hard_drawdown_stop_v30.py
 PYTHONPATH=. python scripts/evaluate_d1_position_loss_stop_v31.py
+PYTHONPATH=. python scripts/evaluate_d1_hybrid_position_stop_v32.py
+MPLCONFIGDIR=/tmp/mplconfig python scripts/plot_d1_hybrid_position_stop_results.py
 python -m pytest -q
 ```
 

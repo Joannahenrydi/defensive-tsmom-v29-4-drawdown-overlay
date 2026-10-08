@@ -1,0 +1,123 @@
+{
+  "status": "V32_REJECTED_KEEP_D1",
+  "frozen_train_winner": null,
+  "fallback": "v29.4 D1",
+  "source_version": "v31",
+  "source_winner": "D1",
+  "development_read": false,
+  "orders_allowed": false,
+  "risk_admitted": false,
+  "prospective_validation_required": false,
+  "protocol_sha256": "1e5bbe28aa997601feee1d4031a42426bb78d00024dcfbcc17540f9d1f229a3c",
+  "config_sha256": "6c02e9592d254b8a2fe99d10ba175613547c98751ab1e626b0a8f12f173dc5e8",
+  "engine_sha256": "3e1ee2cbd681a8c529d76dced16133dcb16ebaa983de889c97e593ff62d8a69e",
+  "evaluator_sha256": "542bf9c9d833716eb6fa54d4bad7134da9518257c5f37c1aaa3e4f9ed777e404",
+  "minimum_cagr": 0.08457997216402362,
+  "calibration": {
+    "median_sigma_20d_annualized": 0.1817404526329202,
+    "k": 0.7565734431052773,
+    "minimum_allowed_loss": 0.125,
+    "median_allowed_loss": 0.1375,
+    "maximum_allowed_loss": 0.15,
+    "floor_trade_count": 93,
+    "interior_trade_count": 35,
+    "ceiling_trade_count": 88
+  },
+  "variants": {
+    "D1_CONTROL": {
+      "variant": "D1_CONTROL",
+      "net_cagr": 0.08926263696222825,
+      "net_total_return": 1.157973523225694,
+      "sharpe": 0.6263570478653694,
+      "maximum_drawdown": -0.23494850661780287,
+      "calmar": 0.37992425764780113,
+      "worst_month": -0.13832700241708096,
+      "average_exposure": 0.7583617824596608,
+      "stop_event_count": 0,
+      "average_stopped_trades": 0.0,
+      "annual_alpha_turnover": 9.302459526708047,
+      "annual_d1_overlay_turnover": 0.6874441606859512,
+      "annual_position_stop_turnover": 0.0,
+      "annual_total_turnover": 9.989903687393998,
+      "alpha_cost": 14200.991196806328,
+      "d1_overlay_cost": 796.4470183207618,
+      "position_stop_cost": 0.0,
+      "total_cost": 14997.43821512709,
+      "raw_p3_cagr_retention": 0.9498273788765418,
+      "d1_cagr_retention": 1.0000000000000049,
+      "improved_deepest_drawdowns": 0,
+      "eligible": false,
+      "materially_worse_non_2011_years": 0
+    },
+    "HYBRID_20D_ENTRY_VOL": {
+      "variant": "HYBRID_20D_ENTRY_VOL",
+      "net_cagr": 0.0897637341502262,
+      "net_total_return": 1.166920685939751,
+      "sharpe": 0.6405753829686351,
+      "maximum_drawdown": -0.21097079788787287,
+      "calmar": 0.42547942676850464,
+      "worst_month": -0.12353615339760093,
+      "average_exposure": 0.7485276635022118,
+      "stop_event_count": 7,
+      "average_stopped_trades": 0.07013674459638289,
+      "annual_alpha_turnover": 9.192037485339748,
+      "annual_d1_overlay_turnover": 0.5140522589373442,
+      "annual_position_stop_turnover": 0.1445618531565453,
+      "annual_total_turnover": 9.850651597433636,
+      "alpha_cost": 13865.78554428297,
+      "d1_overlay_cost": 582.5431254957253,
+      "position_stop_cost": 192.79168713848668,
+      "total_cost": 14641.120356917183,
+      "raw_p3_cagr_retention": 0.9551594623196952,
+      "d1_cagr_retention": 1.0056137394664963,
+      "improved_deepest_drawdowns": 2,
+      "eligible": false,
+      "materially_worse_non_2011_years": 1
+    }
+  },
+  "gates": {
+    "HYBRID_20D_ENTRY_VOL": {
+      "checks": {
+        "raw_p3_cagr_retention": true,
+        "maximum_drawdown_better_than_d1": true,
+        "calmar_better_than_d1": true,
+        "worst_month_better_than_d1": true,
+        "cost_within_limit": true,
+        "turnover_within_limit": true,
+        "deepest_drawdowns_improved": false,
+        "non_2011_years_not_broadly_worse": true
+      },
+      "diagnostics": {
+        "materially_worse_non_2011_years": 1,
+        "improved_deepest_drawdowns": 2
+      }
+    }
+  },
+  "audit": {
+    "passed": true,
+    "observed_hashes": {
+      "p3_daily_sha256": "e3a86847f431f4b05998a589168e3ea65fd47650dc29d61205ab2ef38751e546",
+      "p3_trades_sha256": "448e4685ba85e85952e24d9f4e2c58ec39a8ee6a69103a024cf1e3d450e5dfd2",
+      "p3_ledger_sha256": "5e3d070a65be7ba78ee8a81737862667eda5e27882af9efa047eab636fc97d08",
+      "market_sha256": "208beff0438f2b440c9329265e3bbf49779d09645ad53380ed793fdca9f818f1",
+      "d1_daily_sha256": "c5f9e667474e933e0087ce7e006955dfc2f4eac275bd950815e5172888c21377",
+      "d1_episodes_sha256": "bdab89dad41dae1278e8ef5571ae104ce3d85ebad549f1439a1d6572a152e138",
+      "v29_4_decision_sha256": "d0cb294b78366fd164e491a64c2d9931d8d2024e43dafce9090f35edc5e10bac",
+      "v31_decision_sha256": "d2e3cece366308283d0f26df2c472570271b78680b4925087768ac1c757664ba",
+      "v31_engine_sha256": "a31ad77c77ca93cefd422aebb35bb3d63d94d6108d2b5f4fe1d692b9d0681630"
+    },
+    "mismatches": {},
+    "maximum_gross_reconciliation_error": 1.8189894035458565e-12,
+    "maximum_cost_reconciliation_error": 2.842170943040401e-14,
+    "maximum_exposure_reconciliation_error": 4.440892098500626e-16,
+    "maximum_entry_price_error": 5.684341886080802e-14,
+    "control_maximum_daily_return_error": 1.9168694409543718e-16,
+    "control_maximum_nav_error": 9.89530235528946e-10,
+    "control_maximum_exposure_error": 4.440892098500626e-16,
+    "trade_count": 216,
+    "calibrated_trade_count": 216,
+    "market_symbol_count": 45,
+    "train_last_date": "2016-12-30",
+    "development_read": false
+  }
+}
