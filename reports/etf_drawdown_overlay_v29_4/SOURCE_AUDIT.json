@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "expected_status": "V29_3_LONG_ALPHA_FOUND_RISK_UNASSESSED",
+  "observed_status": "V29_3_LONG_ALPHA_FOUND_RISK_UNASSESSED",
+  "expected_winner": "P3",
+  "observed_winner": "P3",
+  "hashes": {
+    "market_data_sha256": "82347fef112a5f04dc2b5accf947f362eefe1a0a89f1c59bf143a369ab63e32e",
+    "v29_3_protocol_sha256": "f4cea2fa5baa3528bd8b807d6c064961e087f098a20e84df28a920c96eb901a2",
+    "v29_3_config_sha256": "9293aa64f2c9285bbf4ea56e215be873bea6bc39835ae0e4f7453b57f9954b91",
+    "v29_3_engine_sha256": "68ff0285bfca790b92ef4c342fcd11eb0318b0b80de236e03195b16786d027c0",
+    "v29_3_evaluator_sha256": "42719eef1013c169634b7cd40214c97fb82f0c6bf1ffc73502d559a57a029775"
+  },
+  "hash_mismatches": {},
+  "source_daily_sha256": "e3a86847f431f4b05998a589168e3ea65fd47650dc29d61205ab2ef38751e546"
+}

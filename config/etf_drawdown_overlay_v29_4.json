@@ -1,0 +1,49 @@
+{
+  "version": "v29.4",
+  "status": "V29_4_SPECIFIED_NOT_RUN",
+  "source_version": "v29.3",
+  "source_winner": "P3",
+  "source_decision": "inputs/frozen_p3/p3_decision.json",
+  "source_daily": "inputs/frozen_p3/p3_daily.csv",
+  "source_hashes": {
+    "market_data_sha256": "82347fef112a5f04dc2b5accf947f362eefe1a0a89f1c59bf143a369ab63e32e",
+    "v29_3_protocol_sha256": "f4cea2fa5baa3528bd8b807d6c064961e087f098a20e84df28a920c96eb901a2",
+    "v29_3_config_sha256": "9293aa64f2c9285bbf4ea56e215be873bea6bc39835ae0e4f7453b57f9954b91",
+    "v29_3_engine_sha256": "68ff0285bfca790b92ef4c342fcd11eb0318b0b80de236e03195b16786d027c0",
+    "v29_3_evaluator_sha256": "42719eef1013c169634b7cd40214c97fb82f0c6bf1ffc73502d559a57a029775"
+  },
+  "train_start": "2008-01-02",
+  "train_end": "2016-12-30",
+  "initial_nav": 100000.0,
+  "decision_delay_sessions": 1,
+  "drawdown_measure": "shadow_p3_net_nav",
+  "transaction_cost_one_way": 0.001,
+  "maximum_gross": 1.0,
+  "variants": {
+    "D0": {"type": "control"},
+    "D1": {
+      "type": "hard_kill",
+      "kill_drawdown": -0.20,
+      "reentry_half_rebound": 0.05,
+      "reentry_full_rebound": 0.10
+    },
+    "D2": {
+      "type": "progressive",
+      "tiers": [
+        {"minimum_drawdown": -0.10, "multiplier": 1.00},
+        {"minimum_drawdown": -0.15, "multiplier": 0.75},
+        {"minimum_drawdown": -0.20, "multiplier": 0.50},
+        {"minimum_drawdown": -0.25, "multiplier": 0.25},
+        {"minimum_drawdown": -1.00, "multiplier": 0.00}
+      ]
+    },
+    "D3": {"type": "smooth", "zero_exposure_drawdown": -0.25}
+  },
+  "admission": {
+    "minimum_cagr_retention": 0.80,
+    "require_drawdown_improvement": true,
+    "require_calmar_improvement": true,
+    "selection_metric": "calmar",
+    "selection_variants": ["D1", "D2", "D3"]
+  }
+}

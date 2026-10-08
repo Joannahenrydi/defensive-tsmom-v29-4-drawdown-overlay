@@ -1,0 +1,42 @@
+[
+  {
+    "variant": "D0",
+    "nav_reconciliation_error": 0.0,
+    "maximum_controlled_exposure": 1.0,
+    "minimum_cash_exposure": 0.0,
+    "last_date": "2016-12-30",
+    "d0_nav_replication_error": 2.9685907065868378e-09,
+    "d0_return_replication_error": 4.996003610813204e-16,
+    "passed": true
+  },
+  {
+    "variant": "D1",
+    "nav_reconciliation_error": 0.0,
+    "maximum_controlled_exposure": 1.0,
+    "minimum_cash_exposure": 0.0,
+    "last_date": "2016-12-30",
+    "d0_nav_replication_error": null,
+    "d0_return_replication_error": null,
+    "passed": true
+  },
+  {
+    "variant": "D2",
+    "nav_reconciliation_error": 0.0,
+    "maximum_controlled_exposure": 1.0,
+    "minimum_cash_exposure": 0.0,
+    "last_date": "2016-12-30",
+    "d0_nav_replication_error": null,
+    "d0_return_replication_error": null,
+    "passed": true
+  },
+  {
+    "variant": "D3",
+    "nav_reconciliation_error": 0.0,
+    "maximum_controlled_exposure": 1.0,
+    "minimum_cash_exposure": 0.0,
+    "last_date": "2016-12-30",
+    "d0_nav_replication_error": null,
+    "d0_return_replication_error": null,
+    "passed": true
+  }
+]
