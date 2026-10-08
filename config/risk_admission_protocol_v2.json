@@ -1,0 +1,31 @@
+{
+  "protocol_version": "Risk Admission Protocol v2",
+  "status": "FROZEN_FOR_FUTURE_CANDIDATES",
+  "historical_v32_status_must_remain": "V32_REJECTED_KEEP_D1",
+  "retrospective_candidate": "HYBRID_20D_ENTRY_VOL",
+  "source_v32_decision": "reports/d1_hybrid_position_stop_v32/v32_decision.json",
+  "source_fixed_episodes": "reports/d1_hybrid_position_stop_v32/deepest_drawdown_comparison.csv",
+  "source_hashes": {
+    "v32_decision_sha256": "95a0b7b848810c1f0abc795668e2d7583179a7b0ffb72fb2c7629de2537c702c",
+    "fixed_episodes_sha256": "b9933497af4035aaf934f378c20167a692a9b4c0c199a48a2ef272555bea6276"
+  },
+  "unchanged_admission": {
+    "minimum_cagr": 0.08457997216402362,
+    "d1_maximum_drawdown": -0.23494850661780287,
+    "d1_calmar": 0.37992425764780113,
+    "d1_worst_month": -0.13832700241708096,
+    "maximum_cost_multiple_of_d1": 1.10,
+    "maximum_turnover_multiple_of_d1": 1.10,
+    "material_annual_underperformance": -0.02,
+    "maximum_non_2011_materially_worse_years": 1
+  },
+  "tail_episode_robustness": {
+    "material_improvement_threshold": 0.05,
+    "material_deterioration_threshold": -0.02,
+    "minimum_material_improvements": 2,
+    "maximum_material_deteriorations": 0,
+    "aggregate_improvement_must_be_strictly_positive": true
+  },
+  "retrospective_only": true,
+  "orders_allowed": false
+}
