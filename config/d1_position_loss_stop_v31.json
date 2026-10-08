@@ -1,0 +1,49 @@
+{
+  "version": "v31",
+  "status": "V31_SPECIFIED_NOT_RUN",
+  "source_version": "v29.4",
+  "source_winner": "D1",
+  "source_p3_daily": "inputs/frozen_p3/p3_daily.csv",
+  "source_p3_trades": "inputs/frozen_p3/p3_trades.csv",
+  "source_p3_ledger": "inputs/frozen_p3/p3_ledger.csv",
+  "source_market": "inputs/frozen_market/etf_daily.csv",
+  "source_d1_daily": "reports/etf_drawdown_overlay_v29_4/variant_D1_daily.csv",
+  "source_d1_episodes": "reports/etf_drawdown_overlay_v29_4/variant_D1_deepest_drawdowns.csv",
+  "source_v29_4_decision": "reports/etf_drawdown_overlay_v29_4/v29_4_decision.json",
+  "source_v30_decision": "reports/d1_hard_drawdown_stop_v30/v30_decision.json",
+  "source_hashes": {
+    "p3_daily_sha256": "e3a86847f431f4b05998a589168e3ea65fd47650dc29d61205ab2ef38751e546",
+    "p3_trades_sha256": "448e4685ba85e85952e24d9f4e2c58ec39a8ee6a69103a024cf1e3d450e5dfd2",
+    "p3_ledger_sha256": "5e3d070a65be7ba78ee8a81737862667eda5e27882af9efa047eab636fc97d08",
+    "market_sha256": "208beff0438f2b440c9329265e3bbf49779d09645ad53380ed793fdca9f818f1",
+    "d1_daily_sha256": "c5f9e667474e933e0087ce7e006955dfc2f4eac275bd950815e5172888c21377",
+    "d1_episodes_sha256": "bdab89dad41dae1278e8ef5571ae104ce3d85ebad549f1439a1d6572a152e138",
+    "v29_4_decision_sha256": "d0cb294b78366fd164e491a64c2d9931d8d2024e43dafce9090f35edc5e10bac",
+    "v30_decision_sha256": "0b577f2ff5a0e28ba010ad0d591959b66b26e5f89871614484b664c3c07af6ef"
+  },
+  "train_start": "2008-01-02",
+  "train_end": "2016-12-30",
+  "initial_nav": 100000.0,
+  "decision_delay_sessions": 1,
+  "transaction_cost_one_way": 0.001,
+  "reference_price": "p3_trade_entry_adjusted_close",
+  "reentry_rule": "next_p3_trade_episode_only",
+  "variants": {
+    "D1_CONTROL": {"position_loss_stop": null},
+    "PSTOP_5": {"position_loss_stop": -0.05},
+    "PSTOP_7_5": {"position_loss_stop": -0.075},
+    "PSTOP_10": {"position_loss_stop": -0.10},
+    "PSTOP_12_5": {"position_loss_stop": -0.125},
+    "PSTOP_15": {"position_loss_stop": -0.15}
+  },
+  "admission": {
+    "minimum_raw_p3_cagr_retention": 0.90,
+    "maximum_cost_multiple_of_d1": 1.10,
+    "maximum_turnover_multiple_of_d1": 1.10,
+    "minimum_improved_deepest_drawdowns": 3,
+    "material_annual_underperformance": -0.02,
+    "maximum_non_2011_materially_worse_years": 1,
+    "selection_metric": "maximum_drawdown",
+    "selection_order": ["PSTOP_5", "PSTOP_7_5", "PSTOP_10", "PSTOP_12_5", "PSTOP_15"]
+  }
+}
