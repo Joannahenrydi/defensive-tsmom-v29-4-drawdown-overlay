@@ -1,5 +1,10 @@
 # ETF Drawdown Research — v29.4 and v29.5
 
+## Result reports
+
+- [v29.4 result report](V29_4_RESULT_REPORT.md)
+- [v29.5 result report](V29_5_RESULT_REPORT.md)
+
 This private repository contains only the two frozen research stages requested for the long-only
 ETF strategy:
 
