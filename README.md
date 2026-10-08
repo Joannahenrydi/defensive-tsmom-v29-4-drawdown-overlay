@@ -7,6 +7,7 @@
 - [v29.6 result report](V29_6_RESULT_REPORT.md)
 - [v30 result report](V30_RESULT_REPORT.md)
 - [v31 result report](V31_RESULT_REPORT.md)
+- [v29.4 D1 versus v31 result figures](V31_RESULT_FIGURES.md)
 
 This private repository contains only the five frozen research stages requested for the long-only
 ETF strategy:

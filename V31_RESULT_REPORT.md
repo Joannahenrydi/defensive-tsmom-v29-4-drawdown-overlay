@@ -53,3 +53,7 @@ orders remain disabled.
 The complete output is in
 [`reports/d1_position_loss_stop_v31/`](reports/d1_position_loss_stop_v31/), including every stop
 event, daily paths, annual returns, fixed-episode comparisons, source hashes and gate results.
+
+The complete chart set is available in
+[`V31_RESULT_FIGURES.md`](V31_RESULT_FIGURES.md), with individual high-resolution PNG files and a
+combined print-ready PDF.
