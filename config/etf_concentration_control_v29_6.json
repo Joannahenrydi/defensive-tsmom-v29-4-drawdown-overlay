@@ -1,0 +1,51 @@
+{
+  "version": "v29.6",
+  "status": "V29_6_SPECIFIED_NOT_RUN",
+  "source_d1_daily": "reports/etf_drawdown_overlay_v29_4/variant_D1_daily.csv",
+  "source_d1_episodes": "reports/etf_drawdown_overlay_v29_4/variant_D1_deepest_drawdowns.csv",
+  "source_v29_4_decision": "reports/etf_drawdown_overlay_v29_4/v29_4_decision.json",
+  "source_v29_5_decision": "reports/etf_tail_attribution_v29_5/v29_5_decision.json",
+  "source_p3_daily": "inputs/frozen_p3/p3_daily.csv",
+  "source_p3_ledger": "inputs/frozen_p3/p3_ledger.csv",
+  "source_p3_trades": "inputs/frozen_p3/p3_trades.csv",
+  "source_market": "inputs/frozen_market/etf_daily.csv",
+  "source_hashes": {
+    "v29_4_decision_sha256": "d0cb294b78366fd164e491a64c2d9931d8d2024e43dafce9090f35edc5e10bac",
+    "v29_5_decision_sha256": "f056bcbaeb429bf4141360f739458d3237885e981742ac49ed2004ffaaf2eb5e",
+    "d1_daily_sha256": "c5f9e667474e933e0087ce7e006955dfc2f4eac275bd950815e5172888c21377",
+    "p3_ledger_sha256": "5e3d070a65be7ba78ee8a81737862667eda5e27882af9efa047eab636fc97d08",
+    "p3_trades_sha256": "448e4685ba85e85952e24d9f4e2c58ec39a8ee6a69103a024cf1e3d450e5dfd2",
+    "market_sha256": "208beff0438f2b440c9329265e3bbf49779d09645ad53380ed793fdca9f818f1"
+  },
+  "train_start": "2008-01-02",
+  "train_end": "2016-12-30",
+  "initial_nav": 100000.0,
+  "transaction_cost_one_way": 0.001,
+  "variants": {
+    "C0": {"type": "control"},
+    "C1": {
+      "type": "sleeve_cap",
+      "maximum_sleeve_exposure": 0.40
+    },
+    "C2": {
+      "type": "correlation_cluster_risk_cap",
+      "correlation_window": 120,
+      "minimum_observations": 100,
+      "correlation_threshold": 0.70,
+      "maximum_normalized_cluster_risk": 0.35
+    }
+  },
+  "admission": {
+    "minimum_raw_p3_cagr_retention": 0.90,
+    "require_maximum_drawdown_better_than_d1": true,
+    "require_calmar_better_than_d1": true,
+    "require_worst_month_better_than_d1": true,
+    "maximum_cost_multiple_of_d1": 1.10,
+    "maximum_turnover_multiple_of_d1": 1.10,
+    "minimum_improved_deepest_drawdowns": 3,
+    "material_annual_underperformance": -0.02,
+    "maximum_non_2011_materially_worse_years": 1,
+    "selection_metric": "calmar",
+    "selection_order": ["C1", "C2"]
+  }
+}

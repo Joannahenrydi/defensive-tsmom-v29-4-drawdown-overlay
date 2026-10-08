@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "observed_hashes": {
+    "v29_4_decision_sha256": "d0cb294b78366fd164e491a64c2d9931d8d2024e43dafce9090f35edc5e10bac",
+    "v29_5_decision_sha256": "f056bcbaeb429bf4141360f739458d3237885e981742ac49ed2004ffaaf2eb5e",
+    "d1_daily_sha256": "c5f9e667474e933e0087ce7e006955dfc2f4eac275bd950815e5172888c21377",
+    "p3_ledger_sha256": "5e3d070a65be7ba78ee8a81737862667eda5e27882af9efa047eab636fc97d08",
+    "p3_trades_sha256": "448e4685ba85e85952e24d9f4e2c58ec39a8ee6a69103a024cf1e3d450e5dfd2",
+    "market_sha256": "208beff0438f2b440c9329265e3bbf49779d09645ad53380ed793fdca9f818f1"
+  },
+  "mismatches": {},
+  "maximum_weight_reconstruction_error": 4.440892098500626e-16,
+  "maximum_gross_contribution_error": 1.0408340855860843e-16,
+  "maximum_cost_contribution_error": 2.168404344971009e-19,
+  "c0_maximum_daily_return_error": 1.9255430583342559e-16,
+  "c0_maximum_nav_error": 9.022187441587448e-10,
+  "train_last_date": "2016-12-30",
+  "market_last_date": "2016-12-30",
+  "market_symbol_count": 45,
+  "development_read": false
+}
