@@ -10,6 +10,7 @@
 - [v29.4 D1 versus v31 result figures](V31_RESULT_FIGURES.md)
 - [v32 result report](V32_RESULT_REPORT.md)
 - [v32 required result figures](V32_RESULT_FIGURES.md)
+- [Risk Admission Protocol v2 and v32 retrospective diagnostic](RISK_ADMISSION_PROTOCOL_V2_RESULT.md)
 
 This private repository contains only the six frozen research stages requested for the long-only
 ETF strategy:
@@ -69,6 +70,12 @@ In v32, the one-shot hybrid threshold produced 8.98% CAGR, 0.641 Sharpe, -21.10%
 five fixed D1 drawdown windows. Following the pre-registered rule, v32 is rejected and the
 position-stop optimization sequence ends with D1 retained.
 
+Risk Admission Protocol v2 subsequently retires the mechanical 3/5 episode heuristic for future
+candidates. Its materiality-aware rule requires at least two material improvements, no material
+deterioration and positive aggregate fixed-tail improvement. A hash-locked retrospective
+diagnostic finds that v32 would qualify under v2, but does not alter v32's historical rejection or
+create formal acceptance.
+
 ## Reproduce
 
 ```bash
@@ -80,6 +87,8 @@ PYTHONPATH=. python scripts/evaluate_d1_hard_drawdown_stop_v30.py
 PYTHONPATH=. python scripts/evaluate_d1_position_loss_stop_v31.py
 PYTHONPATH=. python scripts/evaluate_d1_hybrid_position_stop_v32.py
 MPLCONFIGDIR=/tmp/mplconfig python scripts/plot_d1_hybrid_position_stop_results.py
+PYTHONPATH=. python scripts/evaluate_risk_admission_protocol_v2.py
+MPLCONFIGDIR=/tmp/mplconfig python scripts/plot_risk_admission_protocol_v2.py
 python -m pytest -q
 ```
 

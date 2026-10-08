@@ -1,0 +1,46 @@
+{
+  "protocol_status": "RISK_ADMISSION_PROTOCOL_V2_FROZEN_FOR_FUTURE_CANDIDATES",
+  "retrospective_status": "V32_WOULD_QUALIFY_UNDER_PROTOCOL_V2_RETROSPECTIVE_ONLY",
+  "historical_v32_status": "V32_REJECTED_KEEP_D1",
+  "historical_v32_decision_unchanged": true,
+  "retrospective_candidate": "HYBRID_20D_ENTRY_VOL",
+  "retrospective_qualifies": true,
+  "formal_acceptance": false,
+  "risk_admitted": false,
+  "orders_allowed": false,
+  "development_read": false,
+  "parameters_rerun": false,
+  "unchanged_gate_checks": {
+    "raw_p3_cagr_retention": true,
+    "maximum_drawdown_better_than_d1": true,
+    "calmar_better_than_d1": true,
+    "worst_month_better_than_d1": true,
+    "cost_within_limit": true,
+    "turnover_within_limit": true,
+    "non_2011_years_not_broadly_worse": true
+  },
+  "unchanged_gates_passed": true,
+  "tail_episode_robustness": {
+    "passed": true,
+    "checks": {
+      "breadth": true,
+      "no_material_deterioration": true,
+      "aggregate_fixed_tail_improvement": true
+    },
+    "material_improvement_count": 2,
+    "neutral_count": 3,
+    "material_deterioration_count": 0,
+    "aggregate_fixed_tail_improvement": 0.05692526538130393
+  },
+  "source_audit": {
+    "passed": true,
+    "observed_hashes": {
+      "v32_decision_sha256": "95a0b7b848810c1f0abc795668e2d7583179a7b0ffb72fb2c7629de2537c702c",
+      "fixed_episodes_sha256": "b9933497af4035aaf934f378c20167a692a9b4c0c199a48a2ef272555bea6276"
+    },
+    "mismatches": {}
+  },
+  "config_sha256": "daec0a6a7b94e98f7e7c3e2dbb432c193311fadafd212ce2c48740c2f9d00e7d",
+  "protocol_sha256": "0b977b56bae328f43b6d27fe82b5ad896c43e2dc3b67c1207875b5b5562de3ed",
+  "evaluator_sha256": "91faa6934a2694e32b1bb6dc55694fcf85239cfdbab696a71bfb875bc3e519b6"
+}
