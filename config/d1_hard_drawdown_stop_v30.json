@@ -1,0 +1,44 @@
+{
+  "version": "v30",
+  "status": "V30_SPECIFIED_NOT_RUN",
+  "source_version": "v29.4",
+  "source_winner": "D1",
+  "source_p3_daily": "inputs/frozen_p3/p3_daily.csv",
+  "source_d1_daily": "reports/etf_drawdown_overlay_v29_4/variant_D1_daily.csv",
+  "source_d1_episodes": "reports/etf_drawdown_overlay_v29_4/variant_D1_deepest_drawdowns.csv",
+  "source_v29_4_decision": "reports/etf_drawdown_overlay_v29_4/v29_4_decision.json",
+  "source_v29_6_decision": "reports/etf_concentration_control_v29_6/v29_6_decision.json",
+  "source_hashes": {
+    "p3_daily_sha256": "e3a86847f431f4b05998a589168e3ea65fd47650dc29d61205ab2ef38751e546",
+    "d1_daily_sha256": "c5f9e667474e933e0087ce7e006955dfc2f4eac275bd950815e5172888c21377",
+    "d1_episodes_sha256": "bdab89dad41dae1278e8ef5571ae104ce3d85ebad549f1439a1d6572a152e138",
+    "v29_4_decision_sha256": "d0cb294b78366fd164e491a64c2d9931d8d2024e43dafce9090f35edc5e10bac",
+    "v29_6_decision_sha256": "e7868a60d21ad265afc8f05d828d74c0c519e1ee2ebccb3b5078ce70c4cda58d",
+    "d1_engine_sha256": "45cec3ae6d1d7f55079f5d90301b98357c94be91791c8dfb940d06910957b0c5"
+  },
+  "train_start": "2008-01-02",
+  "train_end": "2016-12-30",
+  "initial_nav": 100000.0,
+  "decision_delay_sessions": 1,
+  "transaction_cost_one_way": 0.001,
+  "reentry_half_rebound": 0.05,
+  "reentry_full_rebound": 0.10,
+  "variants": {
+    "D1_CONTROL": {"stop_drawdown": null},
+    "STOP_10": {"stop_drawdown": -0.10},
+    "STOP_12_5": {"stop_drawdown": -0.125},
+    "STOP_15": {"stop_drawdown": -0.15},
+    "STOP_17_5": {"stop_drawdown": -0.175},
+    "STOP_20": {"stop_drawdown": -0.20}
+  },
+  "admission": {
+    "minimum_raw_p3_cagr_retention": 0.90,
+    "maximum_cost_multiple_of_d1": 1.10,
+    "maximum_turnover_multiple_of_d1": 1.10,
+    "minimum_improved_deepest_drawdowns": 3,
+    "material_annual_underperformance": -0.02,
+    "maximum_non_2011_materially_worse_years": 1,
+    "selection_metric": "maximum_drawdown",
+    "selection_order": ["STOP_10", "STOP_12_5", "STOP_15", "STOP_17_5", "STOP_20"]
+  }
+}

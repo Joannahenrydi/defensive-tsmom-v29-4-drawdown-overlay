@@ -1,12 +1,13 @@
-# ETF Drawdown Research — v29.4 to v29.6
+# ETF Drawdown Research — v29.4 to v30
 
 ## Result reports
 
 - [v29.4 result report](V29_4_RESULT_REPORT.md)
 - [v29.5 result report](V29_5_RESULT_REPORT.md)
 - [v29.6 result report](V29_6_RESULT_REPORT.md)
+- [v30 result report](V30_RESULT_REPORT.md)
 
-This private repository contains only the three frozen research stages requested for the long-only
+This private repository contains only the four frozen research stages requested for the long-only
 ETF strategy:
 
 - **v29.4** applies causal drawdown-driven exposure scaling to the frozen P3 long-and-cash return
@@ -16,10 +17,12 @@ ETF strategy:
 - **v29.6** holds P3 and D1 fixed while testing a 40% sleeve cap and a causal 120-session
   correlation-cluster risk cap. Both reduce the measured left tail but sacrifice too much return,
   so the final decision again keeps D1.
+- **v30** tests five pre-registered, causal D1 portfolio-drawdown stops while preserving the
+  original D1 re-entry eligibility. No candidate passes every frozen gate, so D1 remains selected.
 
 The repository does not contain earlier strategy implementations. `inputs/frozen_p3/` holds only
 the immutable P3 decision, daily return stream and trade-ledger evidence needed to reproduce
-v29.4–v29.6. `inputs/frozen_market/` supplies the locked 45-ETF adjusted-close history needed only
+v29.4–v30. `inputs/frozen_market/` supplies the locked 45-ETF adjusted-close history needed only
 for v29.6's causal correlation clusters.
 
 ## Results
@@ -29,6 +32,7 @@ for v29.6's causal correlation clusters.
 | v29.4 | `V29_4_TRAIN_DD_PASS_PROSPECTIVE_REQUIRED` | D1 |
 | v29.5 | `V29_5_TARGETED_PROTECTION_REJECTED_KEEP_D1` | Keep D1 |
 | v29.6 | `V29_6_REJECTED_KEEP_D1` | Keep D1 |
+| v30 | `V30_REJECTED_KEEP_D1` | Keep D1 |
 
 Raw P3 had 9.40% CAGR and -26.55% maximum drawdown. D1 retained 8.93% CAGR and reduced maximum
 drawdown to -23.49%. v29.5 identified August 2011 as the -13.83% worst month: the controller
@@ -40,6 +44,10 @@ In v29.6, the 40% sleeve cap improved all five fixed drawdown windows, maximum d
 also improved all five windows but reduced CAGR to 1.92%. Neither retained the required 90% of
 raw P3 CAGR, and both materially lagged D1 in six non-2011 years.
 
+In v30, the closest candidate was the -17.5% D1-drawdown stop. It improved maximum drawdown to
+-21.49%, Calmar to 0.382 and worst month to -12.60%, but CAGR fell to 8.21%, below the frozen
+8.458% floor, and only one of five fixed D1 drawdown windows improved.
+
 ## Reproduce
 
 ```bash
@@ -47,6 +55,7 @@ python -m pip install -r requirements.txt
 PYTHONPATH=. python scripts/evaluate_etf_drawdown_overlay_v29_4.py
 PYTHONPATH=. python scripts/evaluate_etf_tail_attribution_v29_5.py
 PYTHONPATH=. python scripts/evaluate_etf_concentration_control_v29_6.py
+PYTHONPATH=. python scripts/evaluate_d1_hard_drawdown_stop_v30.py
 python -m pytest -q
 ```
 

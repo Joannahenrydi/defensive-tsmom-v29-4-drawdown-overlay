@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "observed_hashes": {
+    "p3_daily_sha256": "e3a86847f431f4b05998a589168e3ea65fd47650dc29d61205ab2ef38751e546",
+    "d1_daily_sha256": "c5f9e667474e933e0087ce7e006955dfc2f4eac275bd950815e5172888c21377",
+    "d1_episodes_sha256": "bdab89dad41dae1278e8ef5571ae104ce3d85ebad549f1439a1d6572a152e138",
+    "v29_4_decision_sha256": "d0cb294b78366fd164e491a64c2d9931d8d2024e43dafce9090f35edc5e10bac",
+    "v29_6_decision_sha256": "e7868a60d21ad265afc8f05d828d74c0c519e1ee2ebccb3b5078ce70c4cda58d",
+    "d1_engine_sha256": "45cec3ae6d1d7f55079f5d90301b98357c94be91791c8dfb940d06910957b0c5"
+  },
+  "mismatches": {},
+  "control_maximum_daily_return_error": 9.974659986866641e-17,
+  "control_maximum_nav_error": 2.9103830456733704e-11,
+  "control_maximum_multiplier_error": 0.0,
+  "train_last_date": "2016-12-30",
+  "development_read": false
+}
